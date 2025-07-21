@@ -30,6 +30,7 @@ let package = Package(
         .package(url: "https://github.com/vapor/leaf.git", latestVersion),
         // 🔵 Non-blocking, event-driven networking for Swift. Used for custom executors
         .package(url: "https://github.com/apple/swift-nio.git", latestVersion),
+        .package(url: "https://gitee.com/ztgtut/vapor-utils.git", latestVersion),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -43,6 +44,7 @@ let package = Package(
                 .product(name: "Leaf", package: "leaf"),
                 .product(name: "NIOCore", package: "swift-nio"),
                 .product(name: "NIOPosix", package: "swift-nio"),
+                .product(name: "VaporUtils", package: "vapor-utils"),
             ]),
         .testTarget(
             name: "SetupContainerTests",
