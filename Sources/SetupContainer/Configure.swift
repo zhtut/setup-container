@@ -136,11 +136,13 @@ public extension Application {
         // 最大连接数
         app.http.server.configuration.backlog = 256
         
-        // Enable HTTP response compression. 允许使用gzip来压缩数据，压缩buffer设置为1024
-        app.http.server.configuration.responseCompression = .enabled(initialByteBufferCapacity: 1024)
-        
-        // Enable HTTP request decompression. No decompression size limit 允许请求压缩，设置为允许，无限制
-        app.http.server.configuration.requestDecompression = .enabled(limit: .none)
+        if setupConfig.isGzipEnabled {
+            // Enable HTTP response compression. 允许使用gzip来压缩数据，压缩buffer设置为1024
+            app.http.server.configuration.responseCompression = .enabled(initialByteBufferCapacity: 1024)
+            
+            // Enable HTTP request decompression. No decompression size limit 允许请求压缩，设置为允许，无限制
+            app.http.server.configuration.requestDecompression = .enabled(limit: .none)
+        }
         
         // Support HTTP pipelining.是否支持管道
         app.http.server.configuration.supportPipelining = true

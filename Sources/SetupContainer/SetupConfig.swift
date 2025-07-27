@@ -45,6 +45,9 @@ public struct SetupConfig: Sendable {
     /// 服务监听的端口名
     public var port = 8080
     
+    /// 是否需要使用gzip压缩
+    public var isGzipEnabled = false
+    
     /// 其他配置
     public var configHandler: (@Sendable (Application) throws -> Void)?
     
