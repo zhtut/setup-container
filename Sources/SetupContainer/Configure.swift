@@ -57,8 +57,10 @@ public func configure(_ app: Application, config: SetupConfig) async throws {
         try config(app)
     }
     
-    // 自动注册migration
-    try await app.autoMigrate()
+    if config.isUsingDatabase {
+        // 自动注册migration
+        try await app.autoMigrate()
+    }
 }
 
 
