@@ -197,11 +197,9 @@ public extension Application {
         let app = self
         
         // 日志
-        app.middleware.use(LogMiddleware())
-        
-        // 错误
-        let error = ErrorMiddleware.default(environment: app.environment)
-        app.middleware.use(error)
+        if setupConfig.isLog {
+            app.middleware.use(LogMiddleware(), at: .beginning)
+        }
         
         // 加上自定义的
         setupConfig.middlewares?.forEach { middleware in

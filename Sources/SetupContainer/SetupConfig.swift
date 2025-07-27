@@ -36,6 +36,9 @@ public struct SetupConfig: Sendable {
     /// 服务名
     public var serverName = "app-server"
     
+    /// 是否打印日志
+    public var isLog: Bool = true
+    
     /// 服务监听的ip
     public var host = "::"
     
