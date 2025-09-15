@@ -33,6 +33,9 @@ public struct SetupConfig: Sendable {
     /// 数据库表名
     public var databaseName = "Database"
     
+    /// 数据库端口
+    public var databasePort: Int?
+    
     /// 服务名
     public var serverName = "app-server"
     

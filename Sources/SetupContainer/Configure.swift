@@ -96,7 +96,8 @@ public extension Application {
         
         // 配置数据库
         let hostName = Environment.get("DATABASE_HOST") ?? "localhost"
-        let port = Environment.get("DATABASE_PORT").flatMap(Int.init(_:)) ?? SQLPostgresConfiguration.ianaPortNumber
+        let port = Environment.get("DATABASE_PORT").flatMap(Int.init(_:)) ??
+        setupConfig.databasePort ?? SQLPostgresConfiguration.ianaPortNumber
         let userName = Environment.get("DATABASE_USERNAME") ?? "zhtut"
         let password =  Environment.get("DATABASE_PASSWORD") ?? "Zaq145236-"
         let database = Environment.get("DATABASE_NAME") ?? setupConfig.databaseName
