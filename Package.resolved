@@ -1,5 +1,5 @@
 {
-  "originHash" : "3d258baff9a50f84d1734daf53fdcaecc3c65732940f4cd73ed09eeb36131375",
+  "originHash" : "0084f7bf965e6fedab498ea900f90ce68b90b3ed1aa73a720fec8e028f1fcd2d",
   "pins" : [
     {
       "identity" : "async-http-client",
@@ -319,10 +319,10 @@
     {
       "identity" : "vapor-utils",
       "kind" : "remoteSourceControl",
-      "location" : "https://gitee.com/ztgtut/vapor-utils.git",
+      "location" : "https://github.com/zhtut/vapor-utils.git",
       "state" : {
-        "revision" : "de90780d323c0c75094fd7f336fb5da246608b01",
-        "version" : "0.1.1"
+        "revision" : "21ced299b77db251a4d371c231282c3915cd8c68",
+        "version" : "0.1.2"
       }
     },
     {
